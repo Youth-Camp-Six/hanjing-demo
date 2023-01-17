@@ -1,4 +1,4 @@
-import './index.scss';
+import './assets/style/index.scss';
 import * as React from 'react';
 import { useState } from 'react';
 
