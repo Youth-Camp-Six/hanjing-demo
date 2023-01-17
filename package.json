@@ -1,13 +1,14 @@
 {
-  "name": "webpack-demo",
+  "name": "hanjing-demo",
   "version": "1.0.0",
   "description": "This is a Webpack React Demo",
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack serve --mode=development",
-    "style": "stylelint \"src/**/*.(vue|scss|css)\"",
+    "lint:css": "stylelint \"src/**/*.{scss,css}\"",
+    "lint:es": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install",
-    "lint": "eslint --ext src"
+    "lint": "npm run lint:es && npm run lint:css"
   },
   "author": "",
   "license": "ISC",
@@ -46,5 +47,13 @@
     "@types/react-dom": "^18.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "lint-staged": {
+    "*.{css,scss}": [
+      "stylelint"
+    ],
+    "*.{js,jsx,ts,tsx}}": [
+      "eslint"
+    ]
   }
 }
